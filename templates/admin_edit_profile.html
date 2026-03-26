@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Edit Profile</title>
+    <link rel="stylesheet" href="/static/css/admin_edit_profile.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Profile</h2>
+        <form method="POST" class="profile-form">
+            <div>
+                <label>Full Name</label>
+                <input type="text" name="fullname" value="{{ admin.fullname }}" class="form-control" required>
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="email" name="email" value="{{ admin.email }}" class="form-control" required>
+            </div>
+            <div>
+                <label>Address</label>
+                <input type="text" name="address" value="{{ admin.Address }}" class="form-control" required>
+            </div>
+            <div>
+                <label>Pincode</label>
+                <input type="text" name="Pincode" value="{{ admin.Pincode }}" class="form-control" required>
+            </div>
+            <div>
+                <label>New Password</label>
+                <input type="password" name="password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

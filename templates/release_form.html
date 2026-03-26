@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Release_Form</title>
+    <link rel="stylesheet" href="/static/css/release_form.css"/>
+</head>
+<body>
+    <div class="form-wrapper">
+    <div class="form-card">
+      <h2>Release the Parking Spot</h2>
+      <form method="POST" action="{{ url_for('release_form') }}">
+        <input type="hidden" name="res_id" value="{{ res.id }}">
+        <label>Spot ID:
+          <input type="text" value="{{ res.spot_id }}" readonly>
+        </label>
+
+        <label>Vehicle Number:
+          <input type="text" value="{{ res.vehicle_number }}" readonly>
+        </label>
+
+        <label>Parking Time:
+          <input type="text" value="{{ res.Parking_timestamp.strftime('%Y-%m-%d %H:%M') }}" readonly>
+        </label>
+
+        <label>Releasing Time:
+          <input type="text" value="{{ now.strftime('%Y-%m-%d %H:%M') }}" readonly>
+        </label>
+
+        <label>Total Cost:
+          <input type="text" value="₹{{ estimated_cost }}" readonly>
+        </label>
+        <div class="form-buttons">
+          <button type="submit" class="release">Release</button>
+          <a href="{{ url_for('dashboard') }}" class="cancel-btn">Cancel</a>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

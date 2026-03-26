@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Summary</title>
+    <link rel="stylesheet" href="/static/css/user_summary.css"/>
+</head>
+<body>
+    <div class="navbar">
+        <span>Welcome, {{ user.fullname }}</span>
+        <a href="{{ url_for('dashboard') }}" style="margin-left:auto;">← Back to Dashboard</a>
+    </div>
+
+    <div class="summary">
+        <h2>Already Used Parking Spots</h2>
+        <img src="data:image/png;base64,{{ chart_data }}" alt="User Parking Summary">
+    </div>
+</body>
+</html> 
+

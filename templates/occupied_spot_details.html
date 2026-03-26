@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Occupied Parking Spot Details</title>
+    <link rel="stylesheet" href="/static/css/occupied_spot_details.css"/>
+
+</head>
+<body>
+  <div class="details-container">
+    <div class="details-header">Occupied Parking Spot Details</div>
+
+    <p class="details-field"><strong>Spot ID:</strong> {{ spot.id }}</p>
+    <p class="details-field"><strong>Customer ID:</strong> {{ reservation.user_id }}</p>
+    <p class="details-field"><strong>Start Time:</strong> {{ reservation.Parking_timestamp }}</p>
+    <p class="details-field"><strong>End Time:</strong> {{ reservation.Leaving_timestamp or 'Still Parked' }}</p>
+    <p class="details-field"><strong>Total Parking Cost:</strong> ₹ {{ reservation.total_cost or 0 }}</p>
+    {% if message %}
+    <p style="color: red; text-align: center;">{{ message }}</p>
+    {% endif %}
+    <div class="button-wrapper">
+      <a href="{{ url_for('admin_dashboard') }}">
+        <button type="button">Close</button>
+      </a>
+      {% if message %}
+      <p style="color: red; text-align: center;">{{ message }}</p>
+      {% endif %}
+    </div>
+  </div>
+</body>
+
+</html>

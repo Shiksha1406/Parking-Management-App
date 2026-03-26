@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Summary</title>
+    <link rel="stylesheet" href="/static/css/admin_summary.css"/>
+</head>
+<body>
+    <div class="navbar">
+        <span>Welcome, {{ user.fullname }}</span>
+        <a href="{{ url_for('admin_dashboard') }}" style="margin-left:auto;">← Back to Dashboard</a>
+    </div>
+
+    <!-- <h1>Statistical Charts</h1> -->
+
+    <div class="charts">
+        <div class="chart">
+            <h3>Revenue from each Parking Lot</h3>
+            <img src="data:image/png;base64,{{ revenue_chart }}" alt="Revenue Chart"/>
+        </div>
+        <div class="chart1">
+            <h3>Available and Occupied Parking Lots</h3>
+            <img src="data:image/png;base64,{{ spot_chart }}" alt="Spot Chart"/>
+        </div>
+    </div>
+</body>
+</html>

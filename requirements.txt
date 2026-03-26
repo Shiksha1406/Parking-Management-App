@@ -1,0 +1,8 @@
+Flask 
+Flask_SQLAlchemy 
+Flask_Migrate 
+Flask_WTF 
+WTForms 
+email-validator
+matplotlib 
+pandas

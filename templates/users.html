@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered_Users</title>
+    <link rel="stylesheet" href="/static/css/users.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <h2>Registered_Users</h2>
+            <a href="{{ url_for('admin_dashboard') }}">← Back to Dashboard</a>
+        </div>
+        <table>
+        <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Pincode</th>
+            <th>Role</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.fullname }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.Address }}</td>
+            <td>{{ user.Pincode }}</td>
+            <td>{{ 'Admin' if user.role == 0 else 'User' }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

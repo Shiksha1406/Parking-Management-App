@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkEase | Homepage</title>
+    <link rel="stylesheet" href="/static/Css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">ParkEase</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('signup') }}">Signup</a></li>
+                <li><a href="{{ url_for('contact_us') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Headline Section -->
+    <section class="headline-section">
+        <h1>Welcome to ParkEase</h1>
+        <p>You drive, We park. Your ultimate Parking Solution!!</p>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us">
+    <h1 id="Whyus">WHY US?</h1>
+    <div class="why-container">
+        <div class="logo-section">
+            <img id="Homepagelogo" src="/static/images/Logo.png" alt="ParkEase Logo">
+        </div>
+        <div class="why-text">
+            <ul class="custom-bullets">
+                <li><strong>Hassle-Free Parking</strong> - Let us handle the stress of finding and managing parking spots while you focus on your day.</li>
+                <li><strong>Time-Saving</strong> - Skip the endless loops around parking lots; we ensure a spot is ready when you arrive.</li>
+                <li><strong>Trusted Professionals</strong> - Our trained staff guarantees safe and secure handling of your vehicle.</li>
+                <li><strong>Affordable Rates</strong> - Competitive pricing with transparent fees—no hidden charges.</li>
+                <li><strong>Convenient Locations</strong> - Wide network of parking spots near popular destinations for your ease.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book the Parking Spot</title>
+  <link rel="stylesheet" href="/static/css/book_parking.css">
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-card">
+      <h2>Book the parking spot</h2>
+      <form method="POST" action="{{ url_for('book_parking') }}">
+        <label>Spot ID:
+          <input type="text" name="spot_id" value="{{ spot_id }}" readonly>
+        </label>
+
+        <label>Lot ID:
+          <input type="text" name="lot_id" value="{{ lot_id }}" readonly>
+        </label>
+
+        <label>User ID:
+          <input type="text" name="user_id" value="{{ user_id }}" readonly>
+        </label>
+
+        <label>Vehicle Number:
+          <input type="text" name="vehicle_number" placeholder="Enter vehicle number" required>
+        </label>
+
+        <!-- Add more fields here if needed -->
+
+        <div class="form-buttons">
+          <button type="submit" class="reserve">Reserve</button>
+          <a href="{{ url_for('dashboard') }}" class="cancel-btn">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

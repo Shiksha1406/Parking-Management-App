@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+    <div class="navbar">
+        <div class="welcome">Welcome, {{ user.fullname }}</div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Home</a>
+            <a href="{{ url_for('user_summary')}}">Summary</a>
+            <a href="{{ url_for('user_edit_profile') }}">Edit Profile</a>
+            <a href="{{ url_for('login') }}">Logout</a>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <h2>Recent Parking History</h2>
+        {% if reservation %}
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Location</th>
+                    <th>Vehicle No</th>
+                    <th>Timestamp</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for res in reservation %}
+                <tr>
+                    <td>{{ res.id }}</td>
+                    <td>{{ res.spot.lot.prime_location_name }}</td>
+                    <td>{{ res.vehicle_number or 'N/A' }}</td>
+                    <td>{{ res.Parking_timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+                    <td>
+                        {% if res.status == 'Parked' %}
+                            <form action="{{ url_for('release_form_page', res_id=res.id) }}" method="GET">
+                                <button type="submit" class="btn release">Release</button>
+                            </form>
+                        {% else %}
+                            <span class="btn parked-out">Parked Out</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p>You have no reservations.</p>
+        {% endif %}
+
+        <h2>Search Parking Lots</h2>
+        <form method="GET" action="{{ url_for('search_parking') }}">
+            <input type="text" name="query" placeholder="Search by location or pincode"  required>
+            <button type="submit">Search</button>
+        </form>
+        {% if request.args.get('query') %}
+            <p>Showing results for: <strong>{{ request.args.get('query') }}</strong></p>
+        {% endif %}
+
+
+        <h2>Available Parking Lots</h2>
+        {% if parking_lots %}
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Location</th>
+                    <th>Address</th>
+                    <th>Availability</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lot in parking_lots %}
+                <tr>
+                    <td>{{ lot.id }}</td>
+                    <td>{{ lot.prime_location_name }}</td>
+                    <td>{{ lot.Address }}</td>
+                    <td>{{ lot.free_spots }}</td>
+                    <td>
+                        {% if lot.free_spots > 0 %}
+                            <form method="GET" action="{{ url_for('book_parking') }}">
+                                <input type="hidden" name="lot_id" value="{{ lot.id }}">
+                                <button type="submit" class="btn book">Book</button>
+                            </form>
+                        {% else %}
+                            <span class="btn full">Full</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p>No parking lots found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

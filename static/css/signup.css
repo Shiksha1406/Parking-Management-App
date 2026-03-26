@@ -1,0 +1,123 @@
+/* signup */
+
+/* General page styles */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  /* height: 100vh; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #00c9ff, #92fe9d);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Container */
+.signup-container {
+  width: 400px;
+  margin: auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heading */
+.signup-container h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+/* Labels */
+.signup-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Input Fields */
+.signup-container input[type="text"],
+.signup-container input[type="email"],
+.signup-container input[type="password"],
+.signup-container input[type="number"]  {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.signup-container input:focus {
+  border-color: #0d6efd;
+  outline: none;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.4);
+}
+
+/* Submit Button */
+.signup-container button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.signup-container button:hover {
+  background-color: #005eea;
+  transform: scale(1.02);
+}
+
+/* Small Text Links */
+.text-small,
+.back-link {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 18px;
+  color: #444;
+}
+
+.text-small a,
+.back-link a {
+  color: #0d6efd;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.text-small a:hover,
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* Bold Login link */
+#text {
+  font-weight: bold;
+}

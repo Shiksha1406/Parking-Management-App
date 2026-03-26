@@ -1,0 +1,137 @@
+/* login */
+
+/* Body and page layout */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #00c9ff, #92fe9d);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Container for the login form */
+.login-container {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heading styles */
+.login-container h2 {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Input group styling */
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #444;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Submit button styles */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Links styling for signup and home */
+.signup-link,
+.home-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signup-link a,
+.home-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-link a:hover,
+.home-link a:hover {
+  text-decoration: underline;
+}
+
+/* Bold style for #text id */
+#text {
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .login-container {
+    padding: 20px;
+    margin: 10px;
+  }
+}
+
+.flashes {
+  list-style: none;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 600px;
+  border: 1px solid #4CAF50;
+  background-color: #dff0d8;
+  color: #3c763d;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+}

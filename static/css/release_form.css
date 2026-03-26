@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #00c6ff, #7fffd4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.form-card {
+  background: #ffffffee;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-card h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+  background: #f8d77d;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #333;
+}
+
+form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f3f3f3;
+  font-size: 14px;
+}
+
+input[readonly] {
+  background: #eaeaea;
+  color: #444;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.release {
+  background: #007bff;
+  color: white;
+}
+
+button.cancel {
+  background: #dddddd;
+  color: #333;
+}
+
+a.cancel-btn {
+  background-color: #ccc;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+

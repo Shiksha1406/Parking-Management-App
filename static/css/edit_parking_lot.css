@@ -1,0 +1,70 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #00c9ff, #92fe9d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.edit-form {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    width: 100%;
+}
+
+.edit-form h2 {
+    background: #FFDD73;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button.update {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+}
+
+a.cancel {
+    background-color: #ccc;
+    color: black;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+input[readonly],
+textarea[readonly] {
+    background-color: #e9ecef;  
+    cursor: not-allowed;
+    color: #495057;             
+}

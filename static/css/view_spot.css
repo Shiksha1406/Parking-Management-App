@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #00c6ff, #00f68b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    text-align: center;
+}
+
+.container h2 {
+    background-color: #fef08a;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.details-link {
+    font-size: 14px;
+    text-align: left;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.details-link:hover {
+    text-decoration: underline;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button[type="submit"],
+button[type="button"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button[type="submit"] {
+    background-color: #ef4444;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #dc2626;
+}
+
+button[type="button"] {
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+button[type="button"]:hover {
+    background-color: #e5e7eb;
+}
