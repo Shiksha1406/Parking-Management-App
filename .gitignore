@@ -1,4 +1,17 @@
-venv/
+# Python bytecode
 __pycache__/
+*.py[cod]
+
+# Virtual Environment
+venv/
+env/
+
+# Editor-specific settings
+.vscode/
+
+# Local databases and instance folders
 *.db
 instance/
+
+# Environment variables (keep your secrets safe!)
+.env
